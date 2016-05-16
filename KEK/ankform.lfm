@@ -1,0 +1,187 @@
+object Form1: TForm1
+  Left = 801
+  Height = 551
+  Top = 123
+  Width = 399
+  Caption = 'Form1'
+  ClientHeight = 551
+  ClientWidth = 399
+  LCLVersion = '1.2.4.0'
+  object Anketa: TGroupBox
+    Left = 0
+    Height = 550
+    Top = 0
+    Width = 400
+    ClientHeight = 532
+    ClientWidth = 396
+    Color = clGray
+    ParentColor = False
+    TabOrder = 0
+    object View: TTreeView
+      Left = 0
+      Height = 542
+      Top = -8
+      Width = 96
+      DefaultItemHeight = 18
+      ReadOnly = True
+      RowSelect = True
+      ScrollBars = ssNone
+      SelectionColor = clGray
+      TabOrder = 0
+      OnChange = ViewChange
+      OnClick = ViewClick
+      OnGetSelectedIndex = ViewGetSelectedIndex
+      Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoReadOnly, tvoRowSelect, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
+    end
+    object PosAnk: TGroupBox
+      Left = 99
+      Height = 544
+      Top = -9
+      Width = 296
+      ClientHeight = 526
+      ClientWidth = 292
+      TabOrder = 1
+      Visible = False
+      OnClick = PosAnkClick
+      object Index: TPanel
+        Left = 8
+        Height = 30
+        Top = 0
+        Width = 72
+        Caption = 'Индекс'
+        Color = clSilver
+        ParentColor = False
+        TabOrder = 0
+        OnClick = IndexClick
+      end
+      object Ready: TPanel
+        Left = 175
+        Height = 23
+        Top = 494
+        Width = 59
+        Caption = 'Готово'
+        TabOrder = 1
+        OnClick = ReadyClick
+      end
+      object Index1: TPanel
+        Left = 88
+        Height = 30
+        Top = 0
+        Width = 72
+        Caption = 'ID анкеты'
+        Color = clSilver
+        ParentColor = False
+        TabOrder = 2
+        OnClick = Index1Click
+      end
+      object DateEdit1: TDateEdit
+        Left = 168
+        Height = 23
+        Top = 0
+        Width = 80
+        CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+        OKCaption = 'OK'
+        CancelCaption = 'Cancel'
+        DateOrder = doNone
+        ButtonWidth = 23
+        CharCase = ecNormal
+        NumGlyphs = 1
+        MaxLength = 0
+        TabOrder = 3
+      end
+    end
+    object StartScreen: TGroupBox
+      Left = 96
+      Height = 152
+      Top = 120
+      Width = 293
+      ClientHeight = 134
+      ClientWidth = 289
+      TabOrder = 2
+      object ForID: TPanel
+        Left = 0
+        Height = 29
+        Top = 0
+        Width = 287
+        Caption = 'Введите свой номер'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -19
+        Font.Name = 'Franklin Gothic Demi'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsItalic]
+        ParentFont = False
+        TabOrder = 0
+      end
+      object ForIDEdit: TEdit
+        Left = 0
+        Height = 23
+        Top = 32
+        Width = 287
+        OnChange = ForIDEditChange
+        OnKeyPress = ForIDEditKeyPress
+        TabOrder = 1
+      end
+      object Ok: TPanel
+        Left = 104
+        Height = 20
+        Top = 112
+        Width = 91
+        Caption = 'Ok'
+        TabOrder = 2
+        OnClick = OkClick
+      end
+      object ForSem: TPanel
+        Left = 0
+        Height = 29
+        Top = 56
+        Width = 287
+        Caption = 'Введите семестр'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -19
+        Font.Name = 'Franklin Gothic Demi'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsItalic]
+        ParentFont = False
+        TabOrder = 3
+      end
+      object ForSemEdit: TEdit
+        Left = 0
+        Height = 23
+        Top = 88
+        Width = 287
+        OnChange = ForIDEditChange
+        OnKeyPress = ForIDEditKeyPress
+        TabOrder = 4
+      end
+    end
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    Database = MSSQLConnection1
+    Transaction = SQLTransaction1
+    Params = <>
+    left = 40
+    top = 512
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    Database = MSSQLConnection1
+    left = 8
+    top = 512
+  end
+  object MSSQLConnection1: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'Anketa'
+    KeepConnection = False
+    Password = '1234'
+    Transaction = SQLTransaction1
+    UserName = 'AdminAnk'
+    HostName = 'localhost'
+    LogEvents = []
+    left = 72
+    top = 512
+  end
+end
