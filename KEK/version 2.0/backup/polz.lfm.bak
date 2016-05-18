@@ -1,0 +1,163 @@
+object Form1: TForm1
+  Left = 340
+  Height = 534
+  Top = 118
+  Width = 524
+  Caption = 'Form1'
+  ClientHeight = 534
+  ClientWidth = 524
+  OnActivate = FormActivate
+  LCLVersion = '1.2.4.0'
+  object Anketa: TGroupBox
+    Left = 0
+    Height = 550
+    Top = 0
+    Width = 400
+    ClientHeight = 532
+    ClientWidth = 396
+    Color = clGray
+    ParentColor = False
+    TabOrder = 0
+    object View: TTreeView
+      Left = 0
+      Height = 542
+      Top = -8
+      Width = 96
+      DefaultItemHeight = 18
+      ReadOnly = True
+      RowSelect = True
+      ScrollBars = ssNone
+      SelectionColor = clGray
+      TabOrder = 0
+      Visible = False
+      OnChange = ViewChange
+      Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoReadOnly, tvoRowSelect, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
+      TreeLinePenStyle = psSolid
+    end
+    object StartScreen: TGroupBox
+      Left = -2
+      Height = 152
+      Top = -16
+      Width = 293
+      ClientHeight = 134
+      ClientWidth = 289
+      TabOrder = 1
+      object ForID: TPanel
+        Left = 0
+        Height = 29
+        Top = 0
+        Width = 287
+        Caption = 'Введите свой номер'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -19
+        Font.Name = 'Franklin Gothic Demi'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsItalic]
+        ParentFont = False
+        TabOrder = 0
+      end
+      object ForIDEdit: TEdit
+        Left = 0
+        Height = 23
+        Top = 32
+        Width = 287
+        OnKeyPress = ForIDEditKeyPress
+        TabOrder = 1
+      end
+      object Ok: TPanel
+        Left = 104
+        Height = 20
+        Top = 112
+        Width = 91
+        Caption = 'Ok'
+        TabOrder = 2
+        OnClick = OkClick
+      end
+      object ForSem: TPanel
+        Left = 0
+        Height = 29
+        Top = 56
+        Width = 287
+        Caption = 'Введите семестр'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -19
+        Font.Name = 'Franklin Gothic Demi'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsItalic]
+        ParentFont = False
+        TabOrder = 3
+      end
+      object ForSemEdit: TEdit
+        Left = 0
+        Height = 23
+        Top = 88
+        Width = 287
+        OnKeyPress = ForIDEditKeyPress
+        TabOrder = 4
+      end
+    end
+    object PC1: TPageControl
+      Left = 96
+      Height = 248
+      Top = -8
+      Width = 301
+      TabOrder = 2
+      Visible = False
+    end
+    object Button1: TButton
+      Left = 96
+      Height = 25
+      Top = 240
+      Width = 75
+      Caption = 'Button1'
+      OnClick = Button1Click
+      TabOrder = 3
+      Visible = False
+    end
+    object Panel1: TPanel
+      Left = 96
+      Height = 37
+      Top = 264
+      Width = 158
+      Caption = 'Panel1'
+      TabOrder = 4
+    end
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    Database = MSSQLConnection1
+    Transaction = SQLTransaction1
+    Params = <>
+    left = 40
+    top = 512
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = True
+    Database = MSSQLConnection1
+    left = 8
+    top = 512
+  end
+  object MSSQLConnection1: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'Anketa'
+    KeepConnection = False
+    Password = '1234'
+    Transaction = SQLTransaction1
+    UserName = 'AdminAnk'
+    HostName = 'localhost'
+    LogEvents = []
+    left = 72
+    top = 512
+  end
+  object SQLQuery2: TSQLQuery
+    FieldDefs = <>
+    Database = MSSQLConnection1
+    Transaction = SQLTransaction1
+    Params = <>
+    left = 8
+    top = 488
+  end
+end
