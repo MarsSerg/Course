@@ -222,6 +222,7 @@ end;
 
 Function Tform1.getsem : integer;
 begin
+  pc1.ActivePage.Destroy;
 
   SQLQuery1.Sql.Clear;
   SqlQuery1.SQL.Add('SELECT semestre FROM Group_semestre where semestre = ' +
@@ -279,7 +280,7 @@ end;
 procedure TForm1.Button1Click(Sender: TObject);
 var
   dates,gr:string;
-  sem,IDstudent,IdQue,IdAnket,Number:integer;
+  sem,IDstudent,Number:integer;
 begin
 
   dates := FormatDateTime('dd.mm.yyyy', Now);
@@ -287,6 +288,7 @@ begin
   sem:=getsem;
   number := getnum(gr, sem, Idnode);
   idstudent := StrToInt(ForIdEdit.Text);
+  //SQLTransaction1.StartTransaction;
   SqlQuery2.SQL.Clear;
   SqlQuery2.SQL.Add('exec Pass  @date=:date,@IDStud=:IDstud,@idquest=:IdQuest,@idank=:IdAnk,@num=:num,@points=:points');
   SQLQuery2.ParamByName('date').AsDate:=StrToDate(dates);
@@ -295,8 +297,9 @@ begin
   SQLQuery2.ParamByName('IdAnk').AsInteger:=idAnket;
   SQLQuery2.ParamByName('Num').AsInteger:=Number;
   SQLQuery2.ParamByName('Points').AsInteger:=Pointes;
-  showmessage(SQLQuery2.Sql.Text);
+  //showmessage(SQLQuery2.SQL);
   SQLQuery2.ExecSQL;
+  SQLTransaction1.Commit;
 
 end;
 
@@ -310,7 +313,7 @@ var
   Nya, index, Readybutt: TPanel;
   Kisa: TspinEdit;
   k: char;
-  max,n,i,sm,number: integer;
+  max,n,i,sm,number,j: integer;
   gr: string;
   tt: TTabSheet;
 
@@ -362,17 +365,25 @@ var
 
       pointes := Kisa.Value;
 
-    Pc1.ActivePageIndex := strtoint(tt.caption) ;
-    panel1.Caption:=inttostr(pc1.ActivePage.TabIndex);
-    sm := (max div 3);
 
-    pc1.ActivePage.Width := nya.Width + 300;
-    MyResize(pc1.ActivePage.Width);
-    ANketa.Width := pc1.ActivePage.Width+300 ;
-    form1.Width := pc1.ActivePage.Width +300;
+    sm := (max div 3);
+    panel1.Caption:=inttostr(pc1.ActivePage.TabIndex);
+
+    pc1.Width := nya.Width +250;
+
+    ANketa.Width := pc1.Width+100 ;
+
+    form1.Width := Anketa.Width ;
+
+
+
 
     end;
+  Pc1.ActivePageIndex := 0;
+  //MyResize(Pc1.ActivePage.Width);
   SqlQuery1.Close;
+
+
 
 end;
 
