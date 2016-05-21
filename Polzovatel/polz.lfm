@@ -1,0 +1,213 @@
+object Form1: TForm1
+  Left = 438
+  Height = 255
+  Top = 137
+  Width = 488
+  ClientHeight = 255
+  ClientWidth = 488
+  OnActivate = FormActivate
+  LCLVersion = '1.2.4.0'
+  object Anketa: TGroupBox
+    Left = 0
+    Height = 224
+    Top = 0
+    Width = 400
+    ClientHeight = 206
+    ClientWidth = 396
+    Color = clGray
+    ParentColor = False
+    TabOrder = 0
+    object View: TTreeView
+      Left = -2
+      Height = 224
+      Top = -16
+      Width = 96
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Height = -13
+      Font.Name = 'Franklin Gothic Demi'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentFont = False
+      ReadOnly = True
+      RowSelect = True
+      ScrollBars = ssNone
+      SelectionColor = clGray
+      TabOrder = 0
+      Visible = False
+      OnChange = ViewChange
+      Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoReadOnly, tvoRowSelect, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
+      TreeLinePenStyle = psSolid
+    end
+    object StartScreen: TGroupBox
+      Left = -2
+      Height = 152
+      Top = -16
+      Width = 293
+      ClientHeight = 134
+      ClientWidth = 289
+      TabOrder = 1
+      object ForID: TPanel
+        Left = 0
+        Height = 29
+        Top = 0
+        Width = 287
+        Caption = 'Введите свой номер'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -19
+        Font.Name = 'Franklin Gothic Demi'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsItalic]
+        ParentFont = False
+        TabOrder = 0
+      end
+      object ForIDEdit: TEdit
+        Left = 0
+        Height = 23
+        Top = 32
+        Width = 287
+        OnKeyPress = ForIDEditKeyPress
+        TabOrder = 1
+      end
+      object Ok: TPanel
+        Cursor = crHandPoint
+        Left = 104
+        Height = 20
+        Top = 112
+        Width = 91
+        Caption = 'Ok'
+        Color = clMedGray
+        Font.CharSet = RUSSIAN_CHARSET
+        Font.Height = -16
+        Font.Name = 'Adobe Gothic Std B'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        TabOrder = 2
+        OnClick = OkClick
+        OnMouseDown = OkMouseDown
+        OnMouseUp = OkMouseUp
+      end
+      object ForSem: TPanel
+        Left = 0
+        Height = 29
+        Top = 56
+        Width = 287
+        Caption = 'Введите семестр'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -19
+        Font.Name = 'Franklin Gothic Demi'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsItalic]
+        ParentFont = False
+        TabOrder = 3
+      end
+      object ForSemEdit: TEdit
+        Left = 0
+        Height = 23
+        Top = 88
+        Width = 287
+        OnKeyPress = ForIDEditKeyPress
+        TabOrder = 4
+      end
+    end
+    object PC1: TPageControl
+      Left = 96
+      Height = 192
+      Top = -16
+      Width = 301
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Height = -13
+      Font.Name = 'Franklin Gothic Medium Cond'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold, fsItalic]
+      ParentFont = False
+      TabOrder = 2
+      Visible = False
+    end
+    object Button1: TPanel
+      Cursor = crHandPoint
+      Left = 97
+      Height = 25
+      Top = 176
+      Width = 268
+      Caption = 'Готов!'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -16
+      Font.Name = 'Franklin Gothic Medium Cond'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold, fsItalic]
+      ParentFont = False
+      TabOrder = 3
+      Visible = False
+      OnClick = Button1Click
+      OnMouseDown = Button1MouseDown
+      OnMouseUp = Button1MouseUp
+    end
+    object Image1: TImage
+      Cursor = crHandPoint
+      Left = 368
+      Height = 16
+      Top = 176
+      Width = 19
+      OnClick = Image1Click
+      Picture.Data = {
+        1754506F727461626C654E6574776F726B47726170686963AE01000089504E47
+        0D0A1A0A0000000D49484452000000110000001108060000003B6D47FA000000
+        0467414D410000AFC837058AE90000001974455874536F667477617265004164
+        6F626520496D616765526561647971C9653C000001404944415478DAA454B14A
+        0341149C3DAE52ABC089E007D8A4B11104ADC4C65204C14641BC601A21550AB1
+        51828875206BA38DF80122588885823FE02F5805B41135588CFBB207D9DDBBE2
+        BC0C0C6F6FF666F6EDDEB18A24F07448BC5E029F6F288DA959A0BE032C9F28C5
+        C736F1728ACA586C43F12C21BEFAD5432612C4F818234030E823C240060EE753
+        A0435BCBE8868AFBA097DC751EAF1BC0B306968C71AB37D29BCAB3C4F80EDABB
+        32C6EDCC20C65FF801321F781437834E042B66E5BD5E7EFF1726E041E7E47C27
+        825B6D3B683A415D1370AF0BCF36C64F81BA96FA01C80225F82E1F140D3B71B9
+        6A020E9C80F3C6682CBACC871E2E801E5D7452AB49751178A2E1765C1E672B4B
+        BDD15693EAEA814771AEE0EBFC13312613E07D8C5FBF969883DDD8B5A75E95EB
+        E63A90FB84472DB23E434EA33CE57DF119FF9F000300173ED306E4DBAA9C0000
+        000049454E44AE426082
+      }
+    end
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    Database = MSSQLConnection1
+    Transaction = SQLTransaction1
+    Params = <>
+    left = 336
+    top = 32
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    Database = MSSQLConnection1
+    left = 304
+    top = 32
+  end
+  object MSSQLConnection1: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'Anketa'
+    KeepConnection = False
+    Password = '1234'
+    Transaction = SQLTransaction1
+    UserName = 'AdminAnk'
+    HostName = 'localhost'
+    LogEvents = []
+    left = 368
+    top = 32
+  end
+  object SQLQuery2: TSQLQuery
+    FieldDefs = <>
+    Database = MSSQLConnection1
+    Transaction = SQLTransaction1
+    Params = <>
+    left = 304
+    top = 8
+  end
+end
